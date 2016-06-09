@@ -61,7 +61,7 @@ server.route({
       return reply({
         msg: 'hello me with token ' + request.query.token,
         username: user.username,
-        accountState: server.info.uri + '/img/' + accountState + '.jpg',
+        accountState: '/img/' + accountState + '.jpg',
         total: total,
       });
     });
