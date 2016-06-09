@@ -47,12 +47,12 @@ server.route({
     var collection = request.server.db.collection('users');
 
     if (!request.query.token) {
-      return reply(Boom.unauthorized('No valid token found, please register at: ' + server.info.uri + '/register'));
+      return reply(Boom.unauthorized('No valid token found, please register at: /register'));
     }
 
     var user = collection.findOne({token: request.query.token}).then(function(user) {
       if (!user) {
-        return reply(Boom.unauthorized('No user found, please register at: ' + server.info.uri + '/register'));
+        return reply(Boom.unauthorized('No user found, please register at: /register'));
       }
 
       var total = _.random(-500, 2000);
